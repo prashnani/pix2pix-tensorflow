@@ -59,3 +59,11 @@ The above results were obtained after 200 epochs of training as prescribed in th
 
 # Acknowledgements
 Code is based on the original torch implementation of [pix2pix](https://github.com/phillipi/pix2pix). Thanks for the excellent work! There are two other excellent repositories on tensorflow implementations of pix2pix by [Yen-Chen Lin](https://github.com/yenchenlin/pix2pix-tensorflow) and [Christopher Hesse](https://github.com/affinelayer/pix2pix-tensorflow). 
+
+If you use this code for your research, please cite the original pix2pix paper:
+@article{pix2pix2017,
+  title={Image-to-Image Translation with Conditional Adversarial Networks},
+  author={Isola, Phillip and Zhu, Jun-Yan and Zhou, Tinghui and Efros, Alexei A},
+  journal={CVPR},
+  year={2017}
+}
