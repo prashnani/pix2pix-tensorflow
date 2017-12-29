@@ -26,6 +26,7 @@ parser.add_argument("--enlarge_size", dest='enlarge_size', type=int, default=286
 parser.add_argument("--out_dir", dest='out_dir', type=str, default=curr_path+'/test_outputs/', help="specify path to training images")
 parser.add_argument("--checkpoint_name", dest='checkpoint_name', type=str, help="specify the checkpoint")
 parser.add_argument("--mode", dest='mode', type=str, help="specify the checkpoint")
+parser.add_argument("--checkpoint_name_preamble", dest='checkpoint_name_preamble', default='', type=str, help="specify the initial naming string for checkpoint name")
 
 args = parser.parse_args()
 
@@ -92,8 +93,8 @@ def train(args):
 
 	######### Prep for training
 	# Path for tf.summary.FileWriter and to store model checkpoints
-	filewriter_path = curr_path+'/'+dataset_name+"_pix2pix_training_info2/TBoard_files"
-	checkpoint_path = curr_path+'/'+dataset_name+"_pix2pix_training_info2/"
+	filewriter_path = curr_path+'/'+dataset_name+'_'+args.checkpoint_name_preamble+"_pix2pix_training_info2/TBoard_files"
+	checkpoint_path = curr_path+'/'+dataset_name+'_'+args.checkpoint_name_preamble+"_pix2pix_training_info2/"
 	out_dir = checkpoint_path+'sample_outputs/'
 	if not os.path.isdir(checkpoint_path): os.mkdir(checkpoint_path)
 	if not os.path.isdir(filewriter_path): os.mkdir(filewriter_path)
